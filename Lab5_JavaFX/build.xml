@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for customization examples. -->
+<project name="Lab5_JavaFX" default="default" basedir=".">
+    <description>Builds, tests, and runs the project Lab5_JavaFX.</description>
+    <import file="nbproject/build-impl.xml"/>
+    
+    <target name="run" depends="jar">
+        <java classname="view.FXMain" fork="true" failonerror="true">
+            <!-- Update this path to point to your extracted JavaFX SDK lib folder -->
+            <jvmarg value="--module-path"/>
+            <jvmarg value="/Users/wolves/Documents/javafx-sdk-21.0.6/lib/"/>
+            <jvmarg value="--add-modules"/>
+            <jvmarg value="javafx.controls,javafx.fxml"/>
+            <classpath>
+                <pathelement path="${build.classes.dir}"/>
+                <pathelement path="${dist.jar}"/>
+            </classpath>
+        </java>
+    </target>
+</project>
